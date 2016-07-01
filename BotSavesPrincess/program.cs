@@ -16,12 +16,14 @@ namespace BotSavesPrincess
         static void Main(String[] args)
         {
             /* VARIABLE DECLARATION */
-            int m = 0;
-            String[] grid = new String[m];
+            int m ;
+            
 
             // SET M EQUAL TO GRID SIZE OF MAP
             m = int.Parse(Console.ReadLine());
 
+            // DECLARE GRID TO GENERATE MAP FROM INPUT STREAM
+            String[] grid = new String[m];
             // ITERATE THROUGH THE INDEXES OF GRID AND STORE THE MAP STRINGS FOR THE GRID
             for (int i = 0; i < m; i++)
             {
@@ -34,8 +36,8 @@ namespace BotSavesPrincess
                 /* VARIABLE DECLARATION */
                 int princessX = -1;
                 int princessY = -1;
-                int marioX = -1;
-                int marioY = -1;
+                int marioX = 0;
+                int marioY = 0;
 
                 // LOCATE PRINCESS
                 for (int counter = 0; counter < m; counter++)
