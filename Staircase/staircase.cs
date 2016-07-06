@@ -4,7 +4,6 @@
 
 /* INCLUDE DIRECTIVES */
 using System;
-using System.Text;
 
 namespace Staircase
 {
@@ -27,32 +26,18 @@ namespace Staircase
         {
             // STAIRCASE IS CONTAINER FOR STAIRCASE OUTPUT
             string[] staircase = new string[num];
-            StringBuilder value = new StringBuilder(num);
-            int rowCount = 1;
-
-            // FOR EACH ROW / INDEX IN THE ARRAY COMPOSE THE REQUIRED STRING
-            for (int rowNum = 0; rowNum <= (staircase.Length - 1); rowNum++)
+            
+            for (int counter = 1; counter <= num; counter++)
             {
-                // FOR EACH NUMERICAL VALUE OF COUNTER WHILE LESS THAN THE PRODUCT OF NUM - ROWCOUNT APPEND A SPACE
-                for (int counter = 1; counter <= num - rowCount; counter++)
-                {
-                    value = value.Append(" ");
-                }
+                // CREATE NEW BLANK AND STAIR STRINGS WITH CORRECT REOCCURANCE
+                string blank = new string(' ', (num - counter));
+                string stair = new string('#', counter);
 
-                // FOR EACH NUMERICAL VALUE OF COUNTER2 WHILE LESS THAN ROWCOUNT APPEND A #
-                for (int counter2 = 0; counter2 < rowCount; counter2++)
-                {
-                    value = value.Append("#");
-                }
-
-                // STORE STRINGBUILDER VALUE TO ARRAY INDEX
-                staircase[rowNum] = value.ToString();
-                // CLEAR THE STRING BUILDER OBJECT OF ALL CHARACTERS
-                value.Clear();
-                // INCREMENT ROWCOUNT
-                rowCount++;
+                // SET VALUE OF STAIRCASE INDEX TO CONCATENATION OF BLANK AND STAIR
+                staircase[counter - 1] = blank + stair;
             }
-            // RETURN COMPLETED STAIRCASE ARRAY
+
+            // RETURN STAIRCASE
             return staircase;
         }
 
